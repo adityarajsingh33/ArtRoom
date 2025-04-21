@@ -1,4 +1,4 @@
-name: ArtTales CI CD Docker X Github Actions
+name: ArtRoom CI CD Docker X Github Actions
 
 on:
   push:
@@ -31,11 +31,11 @@ jobs:
         with:
           context: ./server
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/arttales-backend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/artroom-backend:latest
 
       - name: 🧱 Build and push frontend image
         uses: docker/build-push-action@v6
         with: 
           context: ./client
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/arttales-frontend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/artroom-frontend:latest
